@@ -3,9 +3,9 @@ void setup() {
   noLoop(); //stops the draw() function from repeating
 }
 void draw(){
-  for (int y1 = 2; y1 < 426; y1 += 25){
-    for (int x1 = 37; x1 < 434; x1 += 33){
-      if (y1 % 2 == 0){    // Even
+  for (int y1 = 425; y1 > -30; y1 -= 15){
+    for (int x1 = 434; x1 > 37; x1 -= 33){
+      if (y1 % 2 == 0){      // Even Rows
         scale(x1, y1);
       }
       else {
