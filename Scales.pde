@@ -17,13 +17,25 @@ void draw(){
 
 void scale(int x1, int y1){
   //scale(37, 2, 37, 55, 2, 55, 2, 2);
+  stroke(0);
+  strokeWeight(3);
   bezier(x1, y1, x1, y1+53, x1-35, y1+53, x1-35, y1);
-  for (int x = x1; x < x1 + 33; x++){
-    for (int y = y1; y < y1 + 25; y++){
-      fill((int)Math.random() * 256);
-      ellipse(x, y, 5, 5);
-    }
+  
+  for (int y2 = y1+53; y2 > y1; y2 --){
+      strokeWeight(1);
+      noFill();
+      stroke(y2, 168, (int) (Math.random()*255));
+      bezier(x1, y1, x1, y2, x1-35, y2, x1-35, y1);
   }
+  
+  //for (int x = x1; x < x1 + 33; x++){
+  //  for (int y = y1; y < y1 + 25; y++){
+  //    fill((int)Math.random() * 256,
+  //         (int)Math.random() * 256,
+  //          0);
+  //    ellipse(x, y, 5, 5);
+  //  }
+  //}
   fill(255);
   //ellipse(x1 + 10, y1 + 10, 15, 15);
 }
