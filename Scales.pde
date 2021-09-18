@@ -18,14 +18,15 @@ void draw(){
 void scale(int x1, int y1){
   //scale(37, 2, 37, 55, 2, 55, 2, 2);
   
-  stroke(0);
-  strokeWeight(1);
-  
-  if ((mouseX > x1 && mouseX < x1 + 33) && mouseY < y1 && mouseY > y1 - 53){
-    fill(255);
+  if ((mouseX > x1 && mouseX < x1 + 25) && (mouseY < y1 && mouseY > y1 - 40)){
+    //stroke(0);
+    //strokeWeight(1);
+    fill((y1+53)- 50, 170, (y1+53) + 50);
     bezier(x1, y1, x1, y1+53, x1-35, y1+53, x1-35, y1);
   } 
   else {
+    stroke(0);
+    strokeWeight(1);
     bezier(x1, y1, x1, y1+53, x1-35, y1+53, x1-35, y1);
     
     // Fill Gradient
@@ -39,6 +40,4 @@ void scale(int x1, int y1){
     fill(0);
     ellipse(x1, y1, 50, 10);
   }
-  //bCoord = append(bCoord, {x1, y1, x1, y1+53, x1-35, y1+53, x1-35, y1});
-  //fill(255);
 }
