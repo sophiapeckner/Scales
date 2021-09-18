@@ -1,5 +1,3 @@
-int[][] bCoord = {};
-
 void setup() {
   size(250, 250);
   //noLoop(); //stops the draw() function from repeating
@@ -19,22 +17,27 @@ void draw(){
 
 void scale(int x1, int y1){
   //scale(37, 2, 37, 55, 2, 55, 2, 2);
+  
   stroke(0);
   strokeWeight(1);
   
   if ((mouseX > x1 && mouseX < x1 + 33) && mouseY < y1 && mouseY > y1 - 53){
     fill(255);
     bezier(x1, y1, x1, y1+53, x1-35, y1+53, x1-35, y1);
-  } else {
+  } 
+  else {
     bezier(x1, y1, x1, y1+53, x1-35, y1+53, x1-35, y1);
     
-    // Gradient
+    // Fill Gradient
     for (int y2 = y1+53; y2 > y1; y2 --){
         strokeWeight(1);
         noFill();
-        stroke(y2, 168, (int) (Math.random()*255));
+        stroke(y2 - 50, 139, y2 + 50);
+        //y2 - 50, 250, y2 + 50
         bezier(x1, y1, x1, y2, x1-35, y2, x1-35, y1);
     }
+    fill(0);
+    ellipse(x1, y1, 50, 10);
   }
   //bCoord = append(bCoord, {x1, y1, x1, y1+53, x1-35, y1+53, x1-35, y1});
   //fill(255);
